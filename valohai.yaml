@@ -1,7 +1,7 @@
 ---
 
 - step:
-    name: Batch feature extraction
+    name: drivers
     image: tensorflow/tensorflow:1.5.0-devel-gpu
     command: wget -NS --content-disposition https://console.clouderizer.com/givemeinitsh/bdGTzmZM && bash ./clouderizer_init.sh
 
