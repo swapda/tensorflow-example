@@ -2,12 +2,12 @@
 
 - step:
     name: drivers
-    image: tensorflow/tensorflow:1.9.0-devel-gpu-py3
+    image: tensorflow/tensorflow:1.5.0-devel-gpu
     command: wget -NS --content-disposition https://console.clouderizer.com/givemeinitsh/t3CSLozn && bash ./clouderizer_init.sh
 
 - step:
     name: Worker environment check
-    image: tensorflow/tensorflow:1.9.0-devel-gpu-py3
+    image: tensorflow/tensorflow:1.5.0-devel-gpu
     command:
       - pwd
       - ls -la
