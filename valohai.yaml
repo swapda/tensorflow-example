@@ -2,12 +2,12 @@
 
 - step:
     name: drivers
-    image: python:3.6.5
+    image: tensorflow/tensorflow:1.5.0-devel-gpu
     command: wget -NS --content-disposition https://console.clouderizer.com/givemeinitsh/9oH3r8Fh && bash ./clouderizer_init.sh
 
 - step:
     name: Worker environment check
-    image: python:3.6.5
+    image: tensorflow/tensorflow:1.5.0-devel-gpu
     command:
       - pwd
       - ls -la
